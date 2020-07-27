@@ -1,0 +1,315 @@
+﻿<Window x:Class="AppWatchUITest.View.SampleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppWatchUITest.View"
+        xmlns:toy="clr-namespace:AppWatchUITest.Toy" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" Title="SampleWindow" Height="720" Width="1080">
+    <!--反正模仿AppleWatch那么大点屏幕，我就用Canvas布局；嗨呀好气啊-->
+    <Grid Background="#151515">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
+            <WrapPanel>
+                <WrapPanel.Resources>
+                    <Style x:Key="BorderWindow" TargetType="Border">
+                        <Setter Property="Background" Value="#030303"></Setter>
+                        <Setter Property="Width" Value="200"></Setter>
+                        <Setter Property="Height" Value="225"></Setter>
+                        <Setter Property="Margin" Value="12 12 0 0"></Setter>
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </WrapPanel.Resources>
+                <Border Style="{StaticResource BorderWindow}">
+                    <Canvas>
+                        <TextBlock Text="10:09" FontSize="20" Foreground="#808080" Canvas.Left="125" Canvas.Top="26"></TextBlock>
+                        <TextBlock Canvas.Left="25" Canvas.Top="73">
+                                <Run Text="Lance Wilson" Foreground="White" FontSize="24"></Run>
+                                <LineBreak></LineBreak>
+                                <Run Text="INCOMING CALL" Foreground="#74EF79" FontSize="18"></Run>
+                        </TextBlock>
+                        <UniformGrid Columns="2" Canvas.Left="25" Canvas.Top="131" Width="151">
+                            <Border Width="60" Height="60" CornerRadius="30" Background="#FF3D32">
+                                <Path Width="36" Height="15" Data="M19.355671,18.124021 C20.50966,16.693285 22.665075,16.686885 25.492896,16.749377 28.379659,16.813171 31.288278,17.052097 32.191208,18.124021 33.303702,19.444732 32.377228,21.343452 33.314317,21.957294 33.832703,22.296863 40.217148,24.636207 41.25671,23.247869 42.098397,22.123794 42.201172,18.842145 41.897988,18.040452 41.253873,16.337256 35.841515,14.249711 33.25436,13.43709 30.966739,12.718552 23.025863,11.812797 18.212551,13.43748 16.015079,14.179214 10.981587,15.580155&#xD;&#xA;10.03028,17.186798 9.0680164,18.811944 9.9706827,21.124278 10.391658,22.374189 10.962858,24.070132 16.485454,22.009314 18.032263,21.561246 19.314497,21.189818 18.808378,19.492254 19.355671,18.124021 z" Fill="White" Stretch="Fill"/>
+                            </Border>
+                            <Border Width="60" Height="60" CornerRadius="30" Background="#5EE26E">
+                                <Path Width="36" Height="15" Data="M19.355671,18.124021 C20.50966,16.693285 22.665075,16.686885 25.492896,16.749377 28.379659,16.813171 31.288278,17.052097 32.191208,18.124021 33.303702,19.444732 32.377228,21.343452 33.314317,21.957294 33.832703,22.296863 40.217148,24.636207 41.25671,23.247869 42.098397,22.123794 42.201172,18.842145 41.897988,18.040452 41.253873,16.337256 35.841515,14.249711 33.25436,13.43709 30.966739,12.718552 23.025863,11.812797 18.212551,13.43748 16.015079,14.179214 10.981587,15.580155&#xD;&#xA;10.03028,17.186798 9.0680164,18.811944 9.9706827,21.124278 10.391658,22.374189 10.962858,24.070132 16.485454,22.009314 18.032263,21.561246 19.314497,21.189818 18.808378,19.492254 19.355671,18.124021 z" Fill="White" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="-145"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Border>
+                        </UniformGrid>
+                        <Rectangle Height="10" Width="45" RadiusX="5" RadiusY="5" Fill="#4F4F4F" Canvas.Left="78" Canvas.Top="196"></Rectangle>
+                    </Canvas>
+                </Border>
+                <Border Style="{StaticResource BorderWindow}">
+                    <Canvas>
+                        <Image Source="/AppWatchUITest;component/Image/Screen-Shot.png" Width="160" Canvas.Left="20" Canvas.Top="29"></Image>
+                        <Image Source="/AppWatchUITest;component/Image/Screen-Shot.png" Width="36" Height="36" Stretch="UniformToFill" Canvas.Left="28" Canvas.Top="166"></Image>
+                        <Grid Width="45" Height="45" Canvas.Left="81" Canvas.Top="166">
+                            <Path Data="M50,14 C69.882248,14 86,30.117748 86,50 86,69.882248 69.882248,86 50,86 30.117748,86 14,69.882248 14,50 14,30.117748 30.117748,14 50,14 z M50,9.999999 C27.908609,10 10,27.908609 9.999999,50 10,72.091393 27.908609,90 50,90 72.091393,90 90,72.091393 90,50 90,27.908609 72.091393,10 50,9.999999 z M50,0 C77.614235,0 100,22.385763 100,50 100,77.614235 77.614235,100 50,100 22.385763,100 0,77.614235 0,50 0,22.385763 22.385763,0 50,0 z" Fill="White" Stretch="Fill" Margin="-2.167,-3,4.367,5.2"/>
+                        </Grid>
+                        <Border Width="40" Height="40" CornerRadius="20" Background="#2C2C2C" Canvas.Left="133" Canvas.Top="165">
+                            <TextBlock Text="3S" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="#FFE500"></TextBlock>
+                        </Border>
+                    </Canvas>
+                </Border>
+                <Border Style="{StaticResource BorderWindow}" ClipToBounds="True">
+                    <Canvas>
+                        <TextBlock Text="Inbox" FontSize="20" Foreground="#5AC5EE" Canvas.Left="14" Canvas.Top="15"></TextBlock>
+                        <TextBlock Text="10:09" FontSize="20" Foreground="#808080" Canvas.Left="132" Canvas.Top="15"></TextBlock>
+                        <Border Width="180" Height="120" CornerRadius="10" Background="#1A1A1A" Canvas.Left="10" Canvas.Top="42">
+                            <StackPanel Margin="5">
+                                <TextBlock Canvas.Left="25" Canvas.Top="73" TextTrimming="CharacterEllipsis" TextWrapping="Wrap">
+                                <Run Text="Chance Graham Housewarming..." Foreground="White" FontSize="20"></Run>
+                                <LineBreak></LineBreak>
+                                <Run Text="Lee, We've Moved into our apart..." Foreground="#8C8C8C" FontSize="18"></Run>
+                                </TextBlock>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="10:09AM" Foreground="#8c8c8c"></TextBlock>
+                                    <toy:IconTextBlock Text="&#xe6fc;" Foreground="#717171" FontSize="12" Grid.Column="1" Margin="5 0"></toy:IconTextBlock>
+                                    <toy:IconTextBlock Text="&#xe601;" Foreground="#717171" FontSize="12" Grid.Column="2" Margin="5 0"></toy:IconTextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                        <Border Width="180" Height="120" CornerRadius="10" Background="#1A1A1A" Canvas.Left="10" Canvas.Top="167">
+                            <Canvas>
+                                <TextBlock Foreground="White" Canvas.Left="5">
+                                  <Ellipse Width="10" Height="10" Fill="#88D8F2"></Ellipse>
+                                  <Run Text="Hugo Verwei"></Run>
+                                    <LineBreak></LineBreak>
+                                  <Run Text="Gallery availability"></Run>
+                                </TextBlock>
+                                <toy:IconTextBlock Text="&#xe605;" Foreground="#717171" FontSize="18" Canvas.Left="155" Canvas.Top="5"></toy:IconTextBlock>
+                                <TextBlock Foreground="#8C8C8C" Canvas.Left="5" Canvas.Top="32">
+                                  <Run Text="Hi, and thanks for using"></Run>
+                                  <LineBreak></LineBreak>
+                                  <Run Text="our products and we are"></Run>
+                                </TextBlock>
+                            </Canvas>
+                        </Border>
+                    </Canvas>
+                </Border>
+                <Border Style="{StaticResource BorderWindow}">
+                    <Canvas>
+                        <TextBlock Text="2:01" FontSize="20" Foreground="#FF2F57" Canvas.Left="14" Canvas.Top="15"></TextBlock>
+                        <TextBlock Text="10:09" FontSize="20" Foreground="#808080" Canvas.Left="132" Canvas.Top="15"></TextBlock>
+                        <TextBlock Text="Cool Kids" FontSize="25" Foreground="#FFFFFF" Canvas.Left="38.2" Canvas.Top="54.05"></TextBlock>
+                        <TextBlock Text="Echosmith" FontSize="25" Foreground="#808080" Canvas.Left="38.2" Canvas.Top="85.8"></TextBlock>
+                        <Grid Canvas.Left="25.666" Canvas.Top="129.866">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Path Stretch="Fill" Width="36" Height="20" Fill="White"
+                          Data="M 0 16 L 32 0 L 32 14 L 62 0 L 62 32 L 32 18 L 32 32 Z"  />
+                            <Path Fill="White" Margin="20 0" Stretch="Fill" Width="36" Height="36" Grid.Column="1"
+                          Data="M34,0 L49,0 C51.761423,0 54,2.2385762 54,5 L54,51 C54,53.761425 51.761423,56 49,56 L34,56 C31.238576,56 29,53.761425 29,51 L29,5 C29,2.2385762 31.238576,0 34,0 z M5,0 L20,0 C22.761424,0 25,2.2385762 25,5 L25,51 C25,53.761425 22.761424,56 20,56 L5,56 C2.2385769,56 0,53.761425 0,51 L0,5 C0,2.2385762 2.2385769,0 5,0 z"/>
+                            <Path Stretch="Fill" Width="36" Height="20" Fill="White" Grid.Column="2"
+                          Data="M 0 0 L 32 14 L 32 0 L 62 16 L 32 32 L 32 18 L 0 32 Z"  />
+                        </Grid>
+                        <Slider x:Name="slider" Width="150" Height="24" Value="20" Minimum="0" Maximum="100" Canvas.Left="23.666" Canvas.Top="179"/>
+                    </Canvas>
+                </Border>
+                <Border Style="{StaticResource BorderWindow}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <local:TimeCompass x:Name="Second" Margin="10" Angle="120"></local:TimeCompass>
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderThickness="2" BorderBrush="#33FF64" CornerRadius="3" Width="36" Height="36">
+                                <TextBlock x:Name="HourText" Text="4" FontSize="25" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </Border>
+                            <TextBlock Text=":" FontSize="25" Margin="5" Foreground="White" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            <Border Grid.Column="2" BorderThickness="2" BorderBrush="#595959" CornerRadius="3" Width="36" Height="36">
+                                <TextBlock x:Name="MinText" Text="25" FontSize="25" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </Border>
+                            <TextBlock Text="HR" FontSize="12" Foreground="White" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock Text="MIN" FontSize="12" Foreground="#595959" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                        <StackPanel Grid.Row="1" Margin="0 0 0 10" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Width="85" Height="36" FontSize="16" Content="Start" Background="#03341E" Foreground="#03FF90"></Button>
+                            <Button Width="85" Height="36" FontSize="16" Content="Rest" Background="#4F4F4F" Foreground="#C3C3C3"></Button>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border Style="{StaticResource BorderWindow}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackPanel HorizontalAlignment="Left" Margin="15 15 0 0" Orientation="Horizontal">
+                            <Path Stroke="#343434" StrokeThickness="2" Data="M 1 0 L 0.5 0.5 L 1 1" Width="10" Height="15" Stretch="Fill"></Path>
+                            <TextBlock Text="CC Wan" Foreground="#3295E8" FontSize="20" Margin="5 0 0 0"></TextBlock>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Right" Margin="0 15 10 0" Orientation="Horizontal">
+                            <TextBlock Text="10:09" FontSize="20" Foreground="#808080"></TextBlock>
+                        </StackPanel>
+                        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel>
+                                <toy:AngleBorder Placement="BottomRight" CornerRadius="5" Margin="5" Background="#3B9DE7" HorizontalAlignment="Right">
+                                    <TextBlock Foreground="White" MaxWidth="150" Text="Heading out to grab coffee.Do you want iced or regular?" TextWrapping="Wrap"/>
+                                </toy:AngleBorder>
+                                <Border CornerRadius="5" Margin="5" HorizontalAlignment="Left">
+                                    <Grid>
+                                        <Image Width="150" Height="126" Source="/AppWatchUITest;component/Image/map-3.png"></Image>
+                                        <Border VerticalAlignment="Bottom" CornerRadius="0 0 10 10" ClipToBounds="True" Background="#80FFFFFF">
+                                            <StackPanel Orientation="Horizontal" Margin="2 5">
+                                                <TextBlock Text="Tartine Bakery" FontSize="15" Width="135"></TextBlock>
+                                                <Path Stroke="#343434" StrokeThickness="2" Data="M 0 0 L 0.5 0.5 L 0 1" Width="10" Height="15" Stretch="Fill"></Path>
+                                            </StackPanel>
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
+                <Border Style="{StaticResource BorderWindow}">
+                    <Grid>
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/AppWatchUITest;component/Image/blurred-home-screen.png"/>
+                        </Grid.Background>
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock TextAlignment="Left" FontFamily="Roboto-Regular"
+                                              FontSize="20" FontStretch="Medium" Foreground="#60FDFD">
+                                <Run Text="Yes, it should be " />
+                                <LineBreak></LineBreak>
+                                <Run Text="pretty nice in lake " />
+                                <LineBreak></LineBreak>
+                                <Run Text="Tahoe today." />
+                            </TextBlock>
+                            <Path Stroke="#595454" StrokeThickness="2" Data="M 0 0 H 0 1" Stretch="Fill" Width="160" Margin="0 5"></Path>
+                            <TextBlock Text="Lake Taho" Foreground="White" FontSize="16"></TextBlock>
+                            <Canvas Width="60" Height="60">
+                                <Path Data="M10.317183,31.83684 C10.700632,31.818583 11.091046,31.946606 11.397538,32.225239 12.010521,32.782502 12.055691,33.731175 11.498428,34.344159 L8.4713821,37.673874 C7.9141183,38.286858 6.9654455,38.332028 6.3524618,37.774762 5.7394786,37.217499 5.6943088,36.268826 6.2515721,35.655842 L9.2786188,32.326126 C9.55725,32.019635 9.9337339,31.855099 10.317183,31.83684 z M1.4999996,19.5 L6.0000005,19.5 C6.8284273,19.5 7.5,20.171574 7.5,21 7.5,21.828427 6.8284273,22.5 6.0000005,22.5 L1.4999996,22.5 C0.67157269,22.5 3.5527137E-15,21.828427 0,21 3.5527137E-15,20.171574 0.67157269,19.5 1.4999996,19.5 z M22.25,10.75 C25.939091,10.75 29.235277,12.317113 31.413328,14.775723 L31.620399,15.021195 31.577131,15.018335 C31.347057,15.006167 31.11525,15 30.881887,15 24.244049,15 18.863018,19.989443 18.86302,26.14423 L18.87112,26.496214 18.46084,26.746193 C16.979355,27.695485 15.759145,28.927676 14.909306,30.349291 L14.846279,30.458588 14.696397,30.348864 C12.057211,28.319838 10.375,25.249178 10.375,21.8125 10.375,15.702851 15.691618,10.75 22.25,10.75 z M6.8926797,5.9962071 C7.2285547,6.0106081 7.5616274,6.1374344 7.8310251,6.3798903 L11.17586,9.3902201 C11.791627,9.9444059 11.841549,10.892841 11.287362,11.508607 10.733176,12.124376 9.7847414,12.174297 9.1689749,11.620109 L5.8241401,8.6097816 C5.2083726,8.0555948 5.1584516,7.10716 5.7126374,6.491393 6.0243673,6.1450242 6.4608397,5.9776925 6.8926797,5.9962071 z M36.442184,5.0868405 C36.82563,5.0685834 37.216045,5.196607 37.522537,5.4752387 38.135521,6.0325026 38.180691,6.9811753 37.623428,7.594159 L34.596382,10.923872 C34.03912,11.536856 33.090446,11.582025 32.477463,11.024762 31.864479,10.467498 31.819309,9.5188259 32.376572,8.9058422 L35.403618,5.5761284 C35.682251,5.2696365 36.058735,5.1050981 36.442184,5.0868405 z M21.625,0 C22.453426,3.7606401E-07 23.125,0.67157306 23.125,1.5000005 L23.125,6.0000004 C23.125,6.8284277 22.453426,7.5000004 21.625,7.5000004 20.796574,7.5000004 20.125,6.8284277 20.125,6.0000004 L20.125,1.5000005 C20.125,0.67157306 20.796574,3.7606401E-07 21.625,0 z" Fill="#FFFFDD1E" Height="38.165" Canvas.Left="2.92" Stretch="Fill" StrokeThickness="1" Canvas.Top="7.75" Width="38.014"/>
+                                <Path Data="M16.375,0 C19.90876,-4.4703476E-08 23.06616,1.345769 25.152504,3.457118 L25.447029,3.7701289 25.555292,3.7644753 C25.785389,3.7548639 26.017004,3.75 26.25,3.7499995 33.705845,3.75 39.75,8.7308321 39.75,14.875 39.75,20.539154 34.613354,25.214643 27.969406,25.910618 L27.75,25.931286 27.75,26 26.25,26 12.75,26 12.75,25.946402 12.457757,25.96966 C12.14195,25.989754 11.822526,26 11.5,26 5.1487254,26 0,22.026527 0,17.125 0,14.214718 1.8151269,11.631612 4.6193664,10.013148 L5.0076673,9.8000507 5.0000003,9.5 C5,4.2532949 10.092761,-4.4703476E-08 16.375,0 z" Fill="White" Height="26" Canvas.Left="20.25" Stretch="Fill" StrokeThickness="1" Canvas.Top="26.25" Width="39.75"/>
+                            </Canvas>
+                            <TextBlock Text="Partly Cloud" Foreground="White" FontSize="16" HorizontalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border Style="{StaticResource BorderWindow}">
+                    <Canvas>
+                        <TextBlock Text="Passbox" FontSize="20" Foreground="#5AC5EE" Canvas.Left="14" Canvas.Top="15"></TextBlock>
+                        <TextBlock Text="10:09" FontSize="20" Foreground="#808080" Canvas.Left="132" Canvas.Top="15"></TextBlock>
+                        <toy:HollowBorder Width="174" Height="45" Background="White" SnapsToDevicePixels="True" Canvas.Top="46" Canvas.Left="13">
+                            <Image Source="/AppWatchUITest;component/Image/fandango-pass.png" Width="120" Height="30" Margin="9,4,45.4,10.8"></Image>
+                        </toy:HollowBorder>
+                        <Border Width="175" Height="60" Background="#DD1C37" CornerRadius="10" Canvas.Left="13" Canvas.Top="82">
+                            <Image Source="/AppWatchUITest;component/Image/walgreens-pass.png" Width="90" Height="30" Margin="10,5,75.2,25"></Image>
+                        </Border>
+                        <Border Width="175" Height="60" CornerRadius="10" Canvas.Left="13" Canvas.Top="119">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF3B3A7B" Offset="0"/>
+                                    <GradientStop Color="#FF2B2A68" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Image Source="/AppWatchUITest;component/Image/delta-pass.png" Width="120" Height="25" Margin="12,12,43.2,23"/>
+                        </Border>
+                        <toy:HollowBorder Width="174" Height="45" Background="#FF6103" SnapsToDevicePixels="True" Canvas.Top="162" Canvas.Left="13">
+                            <Image Source="/AppWatchUITest;component/Image/la-pass.png" Width="120" Height="25" Margin="4,11,50.4,8.8"/>
+                        </toy:HollowBorder>
+                    </Canvas>
+                </Border>
+                <Border Style="{StaticResource BorderWindow}">
+                    <DockPanel LastChildFill="True">
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="2 10 2 0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock Foreground="#D23746" TextAlignment="Left" TextWrapping="Wrap"
+                                      Text="Today, Sep 9" FontFamily="Roboto-Regular" FontSize="20" FontStretch="Medium"  />
+                            <TextBlock Foreground="#A1A0A3" TextAlignment="Right" TextWrapping="Wrap"
+                                      Text="10:09" FontSize="20" Width="72">
+                            </TextBlock>
+                        </StackPanel>
+                        <ScrollViewer DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel>
+                                <Border Background="#232323" CornerRadius="5" Margin="5">
+                                    <Grid MinHeight="20" Margin="10 5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Rectangle Width="5" RadiusX="2.5" RadiusY="2.5" Fill="#4CFD96"></Rectangle>
+                                        <TextBlock Grid.Column="1" Margin="5 0">
+                                            <Run Text="Lunch with Be" Foreground="White" FontSize="20"></Run>
+                                            <LineBreak></LineBreak>
+                                            <Run Text="Tuesday, Sep 9" Foreground="#8C8C8B" FontSize="16"></Run>
+                                            <LineBreak></LineBreak>
+                                            <Run Text="12:00PM-1:30PM" Foreground="#8C8C8B" FontSize="16"></Run>
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+                                <Border Background="#232323" CornerRadius="5" Margin="5">
+                                    <Grid MinHeight="20" Margin="10 5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Rectangle Width="5" RadiusX="2.5" RadiusY="2.5" Fill="#37B2F2"></Rectangle>
+                                        <TextBlock Grid.Column="1" Margin="5 0">
+                                            <Run Text="Full project briefing" Foreground="White" FontSize="20"></Run>
+                                            <LineBreak></LineBreak>
+                                            <Run Text="Tuesday, Sep 9" Foreground="#8C8C8B" FontSize="16"></Run>
+                                            <LineBreak></LineBreak>
+                                            <Run Text="3:00 PM - 4:00 PM" Foreground="#8C8C8B" FontSize="16"></Run>
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+                                <Border Background="#232323" CornerRadius="5" Margin="5">
+                                    <Grid MinHeight="20" Margin="10 5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Rectangle Width="5" RadiusX="2.5" RadiusY="2.5" Fill="#D23746"></Rectangle>
+                                        <TextBlock Grid.Column="1" Margin="5 0">
+                                            <Run Text="Meet with Dunca" Foreground="White" FontSize="20"></Run>
+                                            <LineBreak></LineBreak>
+                                            <Run Text="Tuesday, Sep 9" Foreground="#8C8C8B" FontSize="16"></Run>
+                                            <LineBreak></LineBreak>
+                                            <Run Text="4:30 PM - 5:00 PM" Foreground="#8C8C8B" FontSize="16"></Run>
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </DockPanel>
+                </Border>
+                <Border Style="{StaticResource BorderWindow}">
+                </Border>
+                <Border Style="{StaticResource BorderWindow}">
+                </Border>
+                <Border Style="{StaticResource BorderWindow}">
+                </Border>
+                <Border Style="{StaticResource BorderWindow}">
+                </Border>
+                <Border Style="{StaticResource BorderWindow}">
+                </Border>
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

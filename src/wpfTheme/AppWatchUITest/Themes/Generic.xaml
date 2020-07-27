@@ -1,0 +1,12 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:AppWatchUITest">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/AppWatchUITest;component/Themes/Styles/ProgressCircle.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AppWatchUITest;component/Themes/Styles/SwitchView.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AppWatchUITest;component/Themes/Styles/SwitchViewItem.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

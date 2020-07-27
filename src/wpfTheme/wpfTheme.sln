@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Blend for Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "package", "package", "{D78468B2-20EF-4D27-B20F-A02EA0387B26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{2785FB00-2C3B-4344-B850-E5F8D9C4FCEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWatchUITest", "AppWatchUITest\AppWatchUITest.csproj", "{EEFE7E33-253C-427F-9B65-760166BF5292}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		v4.0-Debug|Any CPU = v4.0-Debug|Any CPU
+		v4.0-Release|Any CPU = v4.0-Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEFE7E33-253C-427F-9B65-760166BF5292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEFE7E33-253C-427F-9B65-760166BF5292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEFE7E33-253C-427F-9B65-760166BF5292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEFE7E33-253C-427F-9B65-760166BF5292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEFE7E33-253C-427F-9B65-760166BF5292}.v4.0-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEFE7E33-253C-427F-9B65-760166BF5292}.v4.0-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEFE7E33-253C-427F-9B65-760166BF5292}.v4.0-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEFE7E33-253C-427F-9B65-760166BF5292}.v4.0-Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EEFE7E33-253C-427F-9B65-760166BF5292} = {2785FB00-2C3B-4344-B850-E5F8D9C4FCEC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6029F68C-B66B-47FC-80CD-40C5E3F57E41}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,67 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:AppWatchUITest">
+
+    <LinearGradientBrush x:Key="DefaultBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF1319" Offset="0"/>
+        <GradientStop Color="#F5317A" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ActiveBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#A1FF00" Offset="0"/>
+        <GradientStop Color="#A1FF00" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="FectionBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#67FAED" Offset="0"/>
+        <GradientStop Color="#24CAD9" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="180"></Setter>
+        <Setter Property="Height" Value="45"></Setter>
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Background" Value="{StaticResource DefaultBackground}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle x:Name="rectangle" RadiusY="5" RadiusX="5" Fill="{TemplateBinding Background}" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="RenderTransform" TargetName="rectangle">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="180"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

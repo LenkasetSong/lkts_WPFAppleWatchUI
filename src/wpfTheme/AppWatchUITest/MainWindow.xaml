@@ -1,0 +1,266 @@
+﻿<Window x:Class="AppWatchUITest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppWatchUITest"
+        xmlns:toy="clr-namespace:AppWatchUITest.Toy" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" Title="MainWindow" Height="750" Width="1080">
+    <Grid Background="#151515">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <WrapPanel>
+
+                <Grid Margin="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Grid.ColumnSpan="2" Content="Button" Background="{StaticResource DefaultBackground}" Click="Button_Click"></Button>
+                    <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Button" Background="{StaticResource ActiveBackground}" Click="Button2_Click"></Button>
+                    <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Button" Background="{StaticResource FectionBackground}"></Button>
+                    <Button Grid.Row="3" Width="85" Height="36" FontSize="16"
+                        Content="Button" Background="#03341E" Foreground="#03FF90"></Button>
+                    <Button Grid.Row="3" Grid.Column="1" Width="85" Height="36" FontSize="16"
+                        Content="Button" Background="#4F4F4F" Foreground="#C3C3C3"></Button>
+                    <Button Grid.Row="4" Width="85" Height="36" FontSize="16"
+                        Content="Button" Background="#4F4F4F" Foreground="#61D3FF"></Button>
+                </Grid>
+
+                <Canvas Width="283" Height="328" Margin="20">
+                    <Border Canvas.Left="154" Canvas.Top="234.668" Width="50" Height="40">
+                        <TextBlock TextAlignment="Left" VerticalAlignment="Top" LineHeight="40" TextWrapping="Wrap" Text="WED" 
+                                   FontFamily="Roboto-Regular" FontSize="21" FontStretch="Medium" Foreground="#515151" />
+                    </Border>
+                    <Border Canvas.Left="155" Canvas.Top="279.668" Width="49" Height="41">
+                        <TextBlock TextAlignment="Left" VerticalAlignment="Top" LineHeight="40" TextWrapping="Wrap" Text="10"
+                                   FontFamily="Roboto-Regular" FontSize="41" FontStretch="Medium" Foreground="#FFFFFF" />
+                    </Border>
+                    <Border Canvas.Left="10" Canvas.Top="180" Width="89" Height="40">
+                        <TextBlock TextAlignment="Left" VerticalAlignment="Top" LineHeight="40" TextWrapping="Wrap" Text="12:00"
+                                   FontFamily="Roboto-Regular" FontSize="34" FontStretch="Medium" Foreground="#CBCBCB" />
+                    </Border>
+                    <Border Canvas.Left="10" Canvas.Top="140" Width="161" Height="40">
+                        <TextBlock TextAlignment="Left" VerticalAlignment="Top" LineHeight="40" TextWrapping="Wrap" Text="Messages"
+                                   FontFamily="Roboto-Regular" FontSize="34" FontStretch="Medium" Foreground="#3295E8" />
+                    </Border>
+                    <Border Canvas.Left="10" Canvas.Top="80" Width="141" Height="60">
+                        <TextBlock TextAlignment="Left" VerticalAlignment="Top" LineHeight="60" TextWrapping="Wrap" Text="10:09"
+                                   FontFamily="Roboto-Regular" FontSize="54" FontStretch="Medium" Foreground="#FFFFFF" />
+                    </Border>
+                    <Border Canvas.Left="10" Canvas.Top="0" Width="259" Height="80">
+                        <TextBlock TextAlignment="Left" VerticalAlignment="Top" LineHeight="40" TextWrapping="Wrap"
+                                   FontFamily="Roboto-Regular" FontSize="36" FontStretch="Medium" Foreground="#FFFFFF" >
+                                   <Run Text="Lunch with Ben " />
+                                   <Run Text="at David's Cafe" />
+                        </TextBlock>
+                    </Border>
+                </Canvas>
+
+                <StackPanel>
+                    <Grid Margin="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Path Stretch="Fill" Width="62" Height="32" Fill="White"
+                          Data="M 0 16 L 32 0 L 32 14 L 62 0 L 62 32 L 32 18 L 32 32 Z"  />
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="20 0">
+                            <Rectangle Fill="White" Width="25" Height="56" RadiusX="5" RadiusY="5" Margin="0 0 2 0"></Rectangle>
+                            <Rectangle Fill="White" Width="25" Height="56" RadiusX="5" RadiusY="5" Margin="2 0 0 0"></Rectangle>
+                        </StackPanel>
+                        <Path Stretch="Fill" Width="62" Height="32" Fill="White" Grid.Column="2"
+                          Data="M 0 0 L 32 14 L 32 0 L 62 16 L 32 32 L 32 18 L 0 32 Z"  />
+                    </Grid>
+                    <Slider x:Name="slider" Width="200" Height="36" Margin="20 45" Value="20" Minimum="0" Maximum="100"></Slider>
+                    <UniformGrid Margin="20" Columns="2">
+                        <Border Width="60" Height="60" CornerRadius="30" Background="#FF3D32">
+                            <Path Width="36" Height="15" Data="M19.355671,18.124021 C20.50966,16.693285 22.665075,16.686885 25.492896,16.749377 28.379659,16.813171 31.288278,17.052097 32.191208,18.124021 33.303702,19.444732 32.377228,21.343452 33.314317,21.957294 33.832703,22.296863 40.217148,24.636207 41.25671,23.247869 42.098397,22.123794 42.201172,18.842145 41.897988,18.040452 41.253873,16.337256 35.841515,14.249711 33.25436,13.43709 30.966739,12.718552 23.025863,11.812797 18.212551,13.43748 16.015079,14.179214 10.981587,15.580155&#xD;&#xA;10.03028,17.186798 9.0680164,18.811944 9.9706827,21.124278 10.391658,22.374189 10.962858,24.070132 16.485454,22.009314 18.032263,21.561246 19.314497,21.189818 18.808378,19.492254 19.355671,18.124021 z" Fill="White" Stretch="Fill"/>
+                        </Border>
+                        <Border Width="60" Height="60" CornerRadius="30" Background="#5EE26E">
+                            <Path Width="36" Height="15" Data="M19.355671,18.124021 C20.50966,16.693285 22.665075,16.686885 25.492896,16.749377 28.379659,16.813171 31.288278,17.052097 32.191208,18.124021 33.303702,19.444732 32.377228,21.343452 33.314317,21.957294 33.832703,22.296863 40.217148,24.636207 41.25671,23.247869 42.098397,22.123794 42.201172,18.842145 41.897988,18.040452 41.253873,16.337256 35.841515,14.249711 33.25436,13.43709 30.966739,12.718552 23.025863,11.812797 18.212551,13.43748 16.015079,14.179214 10.981587,15.580155&#xD;&#xA;10.03028,17.186798 9.0680164,18.811944 9.9706827,21.124278 10.391658,22.374189 10.962858,24.070132 16.485454,22.009314 18.032263,21.561246 19.314497,21.189818 18.808378,19.492254 19.355671,18.124021 z" Fill="White" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-145"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Border>
+                    </UniformGrid>
+                </StackPanel>
+
+                <StackPanel>
+                    <toy:AngleBorder Placement="BottomRight" CornerRadius="5" Margin="5" Background="#3B9DE7" HorizontalAlignment="Right">
+                        <TextBlock Foreground="White" MaxWidth="200" Text="Heading out to grab coffee.Do you want iced or regular?" TextWrapping="Wrap"/>
+                    </toy:AngleBorder>
+                    <toy:AngleBorder Placement="BottomLeft" CornerRadius="5" Margin="5" HorizontalAlignment="Left">
+                        <TextBlock MaxWidth="200" Text="Iced. Thank you!" TextWrapping="Wrap"/>
+                    </toy:AngleBorder>
+                    <toy:AngleBorder Placement="BottomRight" CornerRadius="5" Margin="5" Background="#3B9DE7" HorizontalAlignment="Right">
+                        <TextBlock Foreground="White" MaxWidth="200" Text="You're welcome." TextWrapping="Wrap"/>
+                    </toy:AngleBorder>
+
+                    <toy:ProgressCircle Value="20" Style="{DynamicResource Flat2ProgressCircle}" HorizontalAlignment="Left"></toy:ProgressCircle>
+                    <toy:ProgressCircle Value="64" Style="{DynamicResource Flat3ProgressCircle}" HorizontalAlignment="Right"></toy:ProgressCircle>
+                </StackPanel>
+
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Canvas Width="60" Height="60" Margin="20">
+                            <Path Data="M10.317183,31.83684 C10.700632,31.818583 11.091046,31.946606 11.397538,32.225239 12.010521,32.782502 12.055691,33.731175 11.498428,34.344159 L8.4713821,37.673874 C7.9141183,38.286858 6.9654455,38.332028 6.3524618,37.774762 5.7394786,37.217499 5.6943088,36.268826 6.2515721,35.655842 L9.2786188,32.326126 C9.55725,32.019635 9.9337339,31.855099 10.317183,31.83684 z M1.4999996,19.5 L6.0000005,19.5 C6.8284273,19.5 7.5,20.171574 7.5,21 7.5,21.828427 6.8284273,22.5 6.0000005,22.5 L1.4999996,22.5 C0.67157269,22.5 3.5527137E-15,21.828427 0,21 3.5527137E-15,20.171574 0.67157269,19.5 1.4999996,19.5 z M22.25,10.75 C25.939091,10.75 29.235277,12.317113 31.413328,14.775723 L31.620399,15.021195 31.577131,15.018335 C31.347057,15.006167 31.11525,15 30.881887,15 24.244049,15 18.863018,19.989443 18.86302,26.14423 L18.87112,26.496214 18.46084,26.746193 C16.979355,27.695485 15.759145,28.927676 14.909306,30.349291 L14.846279,30.458588 14.696397,30.348864 C12.057211,28.319838 10.375,25.249178 10.375,21.8125 10.375,15.702851 15.691618,10.75 22.25,10.75 z M6.8926797,5.9962071 C7.2285547,6.0106081 7.5616274,6.1374344 7.8310251,6.3798903 L11.17586,9.3902201 C11.791627,9.9444059 11.841549,10.892841 11.287362,11.508607 10.733176,12.124376 9.7847414,12.174297 9.1689749,11.620109 L5.8241401,8.6097816 C5.2083726,8.0555948 5.1584516,7.10716 5.7126374,6.491393 6.0243673,6.1450242 6.4608397,5.9776925 6.8926797,5.9962071 z M36.442184,5.0868405 C36.82563,5.0685834 37.216045,5.196607 37.522537,5.4752387 38.135521,6.0325026 38.180691,6.9811753 37.623428,7.594159 L34.596382,10.923872 C34.03912,11.536856 33.090446,11.582025 32.477463,11.024762 31.864479,10.467498 31.819309,9.5188259 32.376572,8.9058422 L35.403618,5.5761284 C35.682251,5.2696365 36.058735,5.1050981 36.442184,5.0868405 z M21.625,0 C22.453426,3.7606401E-07 23.125,0.67157306 23.125,1.5000005 L23.125,6.0000004 C23.125,6.8284277 22.453426,7.5000004 21.625,7.5000004 20.796574,7.5000004 20.125,6.8284277 20.125,6.0000004 L20.125,1.5000005 C20.125,0.67157306 20.796574,3.7606401E-07 21.625,0 z" Fill="#FFFFDD1E" Height="38.165" Canvas.Left="2.92" Stretch="Fill" StrokeThickness="1" Canvas.Top="7.75" Width="38.014"/>
+                            <Path Data="M16.375,0 C19.90876,-4.4703476E-08 23.06616,1.345769 25.152504,3.457118 L25.447029,3.7701289 25.555292,3.7644753 C25.785389,3.7548639 26.017004,3.75 26.25,3.7499995 33.705845,3.75 39.75,8.7308321 39.75,14.875 39.75,20.539154 34.613354,25.214643 27.969406,25.910618 L27.75,25.931286 27.75,26 26.25,26 12.75,26 12.75,25.946402 12.457757,25.96966 C12.14195,25.989754 11.822526,26 11.5,26 5.1487254,26 0,22.026527 0,17.125 0,14.214718 1.8151269,11.631612 4.6193664,10.013148 L5.0076673,9.8000507 5.0000003,9.5 C5,4.2532949 10.092761,-4.4703476E-08 16.375,0 z" Fill="White" Height="26" Canvas.Left="20.25" Stretch="Fill" StrokeThickness="1" Canvas.Top="26.25" Width="39.75"/>
+                        </Canvas>
+                        <Border Width="60" Height="60" Margin="20" CornerRadius="30" Background="#13AE8B">
+                            <Path Margin="10" Data="M35.330345,24.867622 C35.266186,24.872972 35.195412,24.908264 35.117363,24.97854 34.118351,25.878054 34.750099,27.613789 32.920105,31.096874 32.920105,31.096874 29.870117,32.901356 29.870117,32.901356 29.870117,32.901356 28.989729,32.182957 30.89562,28.000496 30.89562,28.000496 29.260109,27.75988 27.710918,29.953644 27.710918,29.953644 26.525866,34.981926 26.525866,34.981926 26.525866,34.981926 27.635092,36.05434 32.330212,37.000221 32.438225,36.902969 34.226288,37.189697&#xD;&#xA;34.794834,36.008247 34.843861,35.128838 28.965485,35.233009 30.778725,33.910469 30.778725,33.910469 33.902599,32.188046 33.902599,32.188046 33.902599,32.188046 37.686642,34.839485 39.515301,33.739677 38.789631,32.093987 36.500912,31.387293 36.500912,31.387293 36.500912,31.387293 40.879253,28.934814 40.737366,28.326237 40.595467,27.717651 35.923508,28.910833 35.923508,28.910833 35.923508,28.910833 36.087418,24.804502 35.330345,24.867622 z M14.038562,9.6801138 C13.35186,9.6546431 11.056858,13.928896 11.056858,13.928896 11.056858,13.928896 7.2767082,10.32781 7.2767082,11.761551 7.2767082,13.195294 9.1468926,13.933288 10.636294,17.869427 10.636294,17.869427 9.8720675,21.574564 9.8720675,21.574564 9.8720675,21.574564 8.6457873,21.759615 6.6442862,17.264282 6.6442862,17.264282 5.2539773,18.388861 5.902268,21.182358 5.902268,21.182358 9.11687,25.709999 9.11687,25.709999 9.11687,25.709999 10.797637,25.596169&#xD;&#xA;14.995903,22.549932 14.995903,22.39489 16.535143,21.182358 15.991766,19.888502 15.31394,19.222099 11.103228,23.955618 11.35488,21.574564 11.35488,21.574564 12.23969,17.869427 12.23969,17.869427 12.23969,17.869427 17.156302,16.762434 17.6,14.528181 15.734224,13.928896 13.488436,15.238585 13.488436,15.238585 13.488436,15.238585 14.69742,10.01814 14.099866,9.6962891 14.081192,9.6862316 14.060714,9.6809349 14.038562,9.6801138 z M15.929599,0 C18.270271,2.5174491 22.360001,11.011266 22.360001,18.915974 22.360001,27.66404 14.981748,30.944075 9.7504073,31.140533 L9.2528105,31.149969 9.2302084,31.422483 C8.7485743,38.571594 11.727869,43.369572 11.727869,43.369572 11.727869,43.369572 16.166111,36.381493 19.843048,36.381493 19.843048,36.381493 20.030569,32.796707 20.030569,32.796707 20.030569,32.796707 19.933758,24.736092 26.734911,22.088026 29.922951,20.846743 32.827885,20.380146 35.957672,20.390158 39.504757,20.401503 43.340653,21.025024 48.204788,21.826803 50.625755,22.506952 49.642448,25.811298 49.642448,25.811298 49.2071,29.962036 41.116402,37.910542&#xD;&#xA;41.116402,37.910542 41.116402,37.910542 30.312706,49.030289 21.384018,38.609421 20.326,38.923412 14.722591,40.936546 14.1676,49.030289 13.364771,50.590042 12.429367,49.525177 12.429366,49.525177 12.429367,49.045753 5.5909734,41.469612 6.9350133,30.985559 L6.9747868,30.702047 6.7511053,30.612986 C2.2513891,28.731991 -1.8493955,22.195572 0.87640021,15.575 3.1508894,9.3300695 9.8381081,1.6529149 15.929599,0 z" Fill="White" Stretch="Fill"/>
+                        </Border>
+                        <toy:ProgressCircle Value="{Binding ElementName=slider,Path=Value}" Width="64" Height="64"></toy:ProgressCircle>
+                        <Grid Width="100" Height="100" Margin="20">
+                            <toy:ProgressCircle Value="20" Style="{DynamicResource FlatProgressCircle}"></toy:ProgressCircle>
+                            <toy:ProgressCircle Value="72" Style="{DynamicResource FlatProgressCircle}" Width="64" Height="64"></toy:ProgressCircle>
+                            <toy:ProgressCircle Value="45" Style="{DynamicResource FlatProgressCircle}" Width="30" Height="30"></toy:ProgressCircle>
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Width="100" Height="100" Margin="20">
+                            <Path Data="M50,14 C69.882248,14 86,30.117748 86,50 86,69.882248 69.882248,86 50,86 30.117748,86 14,69.882248 14,50 14,30.117748 30.117748,14 50,14 z M50,9.999999 C27.908609,10 10,27.908609 9.999999,50 10,72.091393 27.908609,90 50,90 72.091393,90 90,72.091393 90,50 90,27.908609 72.091393,10 50,9.999999 z M50,0 C77.614235,0 100,22.385763 100,50 100,77.614235 77.614235,100 50,100 22.385763,100 0,77.614235 0,50 0,22.385763 22.385763,0 50,0 z" Fill="White" Stretch="Fill"/>
+                        </Grid>
+                        <Grid Margin="20 0" Height="200">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="M 0 0.5 L 0.38 0.75 L 1 0.25" Width="36" Height="36" Stretch="Fill" Stroke="#FFFFFF"
+                                            Margin="20 0" StrokeThickness="5" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"/>
+                                <Path Data="M 0 0.5 L 1 0.5 M 0.5 0 L 0.5 1" Width="36" Height="36" Stretch="Fill" Stroke="#FFFFFF"
+                                            Margin="20 0" StrokeThickness="5" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                <Path Data="M 0 0.5 L 1 0.5" Width="36" Height="36" Stretch="Fill" Stroke="#FFFFFF"
+                                            Margin="20 0" StrokeThickness="5" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                                <Path Margin="20 0" Width="20" Height="20" Fill="#838282" Stretch="Fill"
+                                            Data="M8.87622 13.177L3.26986 16.3149L4.89729 10.4121L0 6.23173L6.10951 6.23173L8.5606 0L11.5451 6.23173L17.1212 6.23173L12.5491 10.4121L13.8513 16.3149L8.87622 13.177Z"/>
+                                <toy:IconTextBlock Text="&#xe601;" Foreground="#717171" Margin="20 0"></toy:IconTextBlock>
+                                <toy:IconTextBlock Text="&#xe6fc;" Foreground="#717171" Margin="20 0"></toy:IconTextBlock>
+                                <toy:IconTextBlock Text="&#xe605;" Foreground="#717171" Margin="20 0"></toy:IconTextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                                <toy:IconTextBlock Text="&#xe602;" Foreground="#717171" Margin="20 0"></toy:IconTextBlock>
+                                <toy:IconTextBlock Text="&#xe78b;" Foreground="#717171" Margin="20 0"></toy:IconTextBlock>
+                                <toy:IconTextBlock Text="&#xe622;" Foreground="#717171" Margin="20 0"></toy:IconTextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel>
+                    <UniformGrid Margin="20" Columns="3" Width="180" Height="50">
+                        <Border Width="45" Height="45" CornerRadius="30" Background="#FF9603">
+                            <toy:IconTextBlock Text="&#xe609;" FontSize="25" Foreground="White"></toy:IconTextBlock>
+                        </Border>
+                        <Border Width="45" Height="45" CornerRadius="30" Background="#037CFF">
+                            <toy:IconTextBlock Text="&#xe604;" FontSize="25" Foreground="White"></toy:IconTextBlock>
+                        </Border>
+                        <Border Width="45" Height="45" CornerRadius="30" Background="#5A58D6">
+                            <toy:IconTextBlock Text="&#xe606;" FontSize="25" Foreground="White"></toy:IconTextBlock>
+                        </Border>
+                    </UniformGrid>
+
+                    <toy:SwitchView Margin="20">
+                        <toy:SwitchViewItem Style="{DynamicResource WideSwitchItem}"></toy:SwitchViewItem>
+                        <toy:SwitchViewItem></toy:SwitchViewItem>
+                        <toy:SwitchViewItem></toy:SwitchViewItem>
+                        <toy:SwitchViewItem></toy:SwitchViewItem>
+                        <toy:SwitchViewItem></toy:SwitchViewItem>
+                    </toy:SwitchView>
+
+                    <Grid Margin="20">
+                        <Path Stretch="Fill" Width="260.59" Height="45.32" Fill="#803B9DE7"
+                                   Data="M0 45.3181C0 45.3181 208.363 45.3181 260.594 45.3181C239.742 43.2712 221.325 24.9408 212.024 12.5404C191.948 -15.9752 169.161 12.5404 163.481 16.2528C158.007 20.0184 156.612 22.1103 142.785 29.0384C126.964 36.9658 116.664 35.4332 98.4844 24.8171C66.6348 0.790705 47.582 14.9478 41.8154 19.2357C20.2412 32.5855 0 45.3181 0 45.3181Z"/>
+                        <Path Stretch="Fill"  Width="277.41" Height="47.12" Fill="#805AE2A0"
+                                   Data="M0 47.122C0 47.122 225.179 47.122 277.41 47.122C273.201 44.7861 267.863 40.5635 259.996 30.8792C244.201 12.0234 230.796 -2.41183 198.708 20.5366C168.886 43.0298 155.091 30.4088 151.593 25.4091C129.397 -6.31691 115.768 -1.54054 105.906 4.10692C80.4238 23.0063 88.5625 16.2378 73.8584 17.3579C61.1631 13.2554 51.8018 13.7886 37.873 23.2231C11.7832 41.7104 0 47.122 0 47.122Z" />
+                        <Path Stretch="Fill" Width="274.67" Height="48.16" Fill="#80F53C61"
+                                   Data="M0 48.1577C0 48.1577 222.437 48.1577 274.668 48.1577C261.326 43.0932 244.476 16.2602 222.192 26.4448C199.909 36.6294 181.607 16.9277 177.861 11.9331C157.785 -16.5825 134.268 14.229 124.406 19.8764C101.242 34.4995 84.3105 25.8196 65.9082 13.8052C54.541 5.94871 48.7285 -2.87649 35.1719 14.8139C15.9453 43.1469 0 48.1577 0 48.1577Z"/>
+                    </Grid>
+
+                    <toy:WaveCanvas x:Name="wave" Width="270" Height="90" Totals="45"></toy:WaveCanvas>
+
+                </StackPanel>
+
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="#D23746" TextAlignment="Left" VerticalAlignment="Top" LineHeight="36" TextWrapping="Wrap"
+                                      Text="Today, Sep 9" FontFamily="Roboto-Regular" FontSize="27.95083" FontStretch="Medium"  />
+                        <TextBlock Foreground="#A1A0A3" TextAlignment="Left" VerticalAlignment="Top" LineHeight="38" TextWrapping="Wrap"
+                                      Text="10:09" FontSize="27">
+                        </TextBlock>
+                    </StackPanel>
+                    <Border Background="#232323" CornerRadius="5" Margin="5">
+                        <Grid MinHeight="20" Margin="10 5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Width="5" RadiusX="2.5" RadiusY="2.5" Fill="#4CFD96"></Rectangle>
+                            <TextBlock Grid.Column="1" Margin="5 0">
+                                <Run Text="Lunch with Be" Foreground="White" FontSize="24"></Run>
+                                <LineBreak></LineBreak>
+                                <Run Text="Tuesday, Sep 9" Foreground="#8C8C8B" FontSize="16"></Run>
+                                <LineBreak></LineBreak>
+                                <Run Text="12:00PM-1:30PM" Foreground="#8C8C8B" FontSize="16"></Run>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border Background="#232323" CornerRadius="5" Margin="5">
+                        <Grid MinHeight="20" Margin="10 5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Width="5" RadiusX="2.5" RadiusY="2.5" Fill="#37B2F2"></Rectangle>
+                            <TextBlock Grid.Column="1" Margin="5 0">
+                                <Run Text="Full project briefing" Foreground="White" FontSize="24"></Run>
+                                <LineBreak></LineBreak>
+                                <Run Text="Tuesday, Sep 9" Foreground="#8C8C8B" FontSize="16"></Run>
+                                <LineBreak></LineBreak>
+                                <Run Text="3:00 PM - 4:00 PM" Foreground="#8C8C8B" FontSize="16"></Run>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border Background="#232323" CornerRadius="5" Margin="5">
+                        <Grid MinHeight="20" Margin="10 5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Width="5" RadiusX="2.5" RadiusY="2.5" Fill="#D23746"></Rectangle>
+                            <TextBlock Grid.Column="1" Margin="5 0">
+                                <Run Text="Meet with Dunca" Foreground="White" FontSize="24"></Run>
+                                <LineBreak></LineBreak>
+                                <Run Text="Tuesday, Sep 9" Foreground="#8C8C8B" FontSize="16"></Run>
+                                <LineBreak></LineBreak>
+                                <Run Text="4:30 PM - 5:00 PM" Foreground="#8C8C8B" FontSize="16"></Run>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+
+
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,72 @@
+{
+  "id": "1880843",
+  "name": "app",
+  "font_family": "appfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "239107",
+      "name": "飞机",
+      "font_class": "icon",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "4434175",
+      "name": "夜晚",
+      "font_class": "moon",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "13682476",
+      "name": "蓝牙-已连接",
+      "font_class": "lanya-yilianjie",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "125900",
+      "name": "闹钟",
+      "font_class": "naozhong1",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "364847",
+      "name": "回形针",
+      "font_class": "huixingzhen",
+      "unicode": "e6fc",
+      "unicode_decimal": 59132
+    },
+    {
+      "icon_id": "1120037",
+      "name": "向右",
+      "font_class": "shuangyou",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "2040091",
+      "name": "闹钟",
+      "font_class": "naozhong",
+      "unicode": "e78b",
+      "unicode_decimal": 59275
+    },
+    {
+      "icon_id": "7580705",
+      "name": "罗盘",
+      "font_class": "luopan-copy",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "14983153",
+      "name": "收 藏",
+      "font_class": "shoucang",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}
